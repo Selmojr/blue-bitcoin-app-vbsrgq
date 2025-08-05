@@ -45,15 +45,7 @@
     },
     "plugins": [
       "expo-font",
-      "expo-router",
-      [
-        "react-native-bluetooth-classic",
-        {
-          "peripheralUsageDescription": "Este app usa Bluetooth para transações Bitcoin seguras entre dispositivos próximos.",
-          "alwaysUsageDescription": "Este app usa Bluetooth para transações Bitcoin seguras entre dispositivos próximos.",
-          "protocols": ["com.bitcoinwallet.protocol"]
-        }
-      ]
+      "expo-router"
     ],
     "scheme": "bitcoin-bluetooth-wallet",
     "experiments": {
