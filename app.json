@@ -1,7 +1,8 @@
+
 {
   "expo": {
-    "name": "Natively",
-    "slug": "Natively",
+    "name": "Bitcoin Bluetooth Wallet",
+    "slug": "bitcoin-bluetooth-wallet",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/natively-dark.png",
@@ -10,21 +11,33 @@
     "splash": {
       "image": "./assets/images/natively-dark.png",
       "resizeMode": "contain",
-      "backgroundColor": "#000000"
+      "backgroundColor": "#1a1a1a"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.Natively",
+      "bundleIdentifier": "com.bitcoinwallet.bluetoothwallet",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSBluetoothAlwaysUsageDescription": "Este app usa Bluetooth para transações Bitcoin seguras entre dispositivos próximos.",
+        "NSBluetoothPeripheralUsageDescription": "Este app usa Bluetooth para transações Bitcoin seguras entre dispositivos próximos."
       }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/natively-dark.png",
-        "backgroundColor": "#000000"
+        "backgroundColor": "#1a1a1a"
       },
-      "package": "com.anonymous.Natively"
+      "package": "com.bitcoinwallet.bluetoothwallet",
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.BLUETOOTH_ADVERTISE"
+      ],
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/images/final_quest_240x240.png",
@@ -32,14 +45,25 @@
     },
     "plugins": [
       "expo-font",
-      "expo-router"
+      "expo-router",
+      [
+        "react-native-bluetooth-classic",
+        {
+          "peripheralUsageDescription": "Este app usa Bluetooth para transações Bitcoin seguras entre dispositivos próximos.",
+          "alwaysUsageDescription": "Este app usa Bluetooth para transações Bitcoin seguras entre dispositivos próximos.",
+          "protocols": ["com.bitcoinwallet.protocol"]
+        }
+      ]
     ],
-    "scheme": "natively",
+    "scheme": "bitcoin-bluetooth-wallet",
     "experiments": {
       "typedRoutes": true
     },
     "extra": {
-      "router": {}
+      "router": {},
+      "eas": {
+        "projectId": "bitcoin-bluetooth-wallet"
+      }
     }
   }
 }
